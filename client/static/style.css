@@ -1,0 +1,58 @@
+body {
+    background-color: bisque;
+    box-sizing: border-box;
+    text-align: center;
+    margin: 200px;
+}
+
+div.title {
+    margin-bottom: 100px;
+}
+
+div.main-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+}
+
+div.container-file {
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    border: 1px solid grey;
+    border-radius: 12px;
+    padding: 12px 24px;
+}
+
+.btnMatch,
+.btnConvert {
+    padding: 12px 24px;
+    border-radius: 12px;
+}
+
+.btnConvert {
+    color: green;
+    background-color: lightgray;
+}
+
+.btnMatch {
+    color: lightgrey;
+    background-color: green;
+}
+
+div.container label {
+    font-size: 18px;
+    color: rgb(110, 109, 109);
+}
+
+footer span {
+    padding: 5px;
+    color: green;
+}
+
+footer {
+    margin-top: 100px;
+}
