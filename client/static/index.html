@@ -24,7 +24,7 @@
                 <button class="btnConvert" type="submit">Конвертирай</button>
             </div>
             <div class="container-file">
-                <label for="file-upload">Моля, изберете файл с ТАБЛИЦА ВЪВ PDF ФОРМАТ от вашето устройство!</label>
+                <label for="file-upload">Моля, изберете файл с ТАБЛИЦА В PDF ФОРМАТ от вашето устройство!</label>
                 <input type="file" name="file-upload-pdf" id="file-upload-pdf" multiple>
                 <button class="btnMatch" type="submit">Сравни данните</button>
             </div>
@@ -44,7 +44,7 @@
     //let btnMatch = document.querySelector(".btnMatch");
 
     btnConvert.addEventListener('click', cleanText);
-    console.log(btnConvert)
+    const fileds = [];
 
     let count = 0;
     function cleanText(e) {
@@ -69,16 +69,10 @@
             const rows = result.split('\n').map(row => row.split(','));
             createExcelFile(rows);
         };
-        await reader.readAsText(file, ' utf-8');
+        await reader.readAsText(file, 'utf-8');
     }
     function createExcelFile(rows) {
         const worksheet = XLSX.utils.aoa_to_sheet(rows);
-        const borderStyle = {
-            top: { style: "thin" },
-            bottom: { style: "thin" },
-            left: { style: "thin" },
-            right: { style: "thin" }
-        };
         const workbook = XLSX.utils.book_new();
         XLSX.utils.book_append_sheet(workbook, worksheet, "Таблици за Женя");
 
