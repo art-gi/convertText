@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "start": "nodemon app/server.cjs"
+    "start": "node app/server.cjs"
   },
   "type": "commonjs",
   "description": "",
