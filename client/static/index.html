@@ -44,7 +44,12 @@
     //let btnMatch = document.querySelector(".btnMatch");
 
     btnConvert.addEventListener('click', cleanText);
-    const fileds = [];
+    const fields = ['Година', 'Месец', 'Метод', 'Отраб. дни (критер.)', 'Сума', 'Осиг. доход доплащане',
+    'Осиг. доход фонд преди допл.', 'Нов осиг. доход фонд след допл.',
+    'Осиг. доход социални', 'Нов осиг. доход за ЗО болн.',
+    ' Нов осиг. доход за ЗО майч.', '%ЗО болн. майч.',
+    'Нов осиг. доход за ЗО непл. отпуск','ЗО непл.отп','Нова брутна сума',
+    'Нова облагаема с ДОД сума', 'Нов ДОД', 'Нова нетна сума', 'Общо осиг. доход/1+2+3+4+5/'];
 
     let count = 0;
     function cleanText(e) {
@@ -67,6 +72,9 @@
             const result = e.target.result;
 
             const rows = result.split('\n').map(row => row.split(','));
+            console.log(rows)
+            rows.unshift(fields);
+            console.log(rows)
             createExcelFile(rows);
         };
         await reader.readAsText(file, 'utf-8');
